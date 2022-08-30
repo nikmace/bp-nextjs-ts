@@ -2,16 +2,18 @@ import { withTRPC } from '@trpc/next';
 import type { AppProps } from 'next/app';
 import { loggerLink } from '@trpc/client/links/loggerLink';
 import { httpBatchLink } from '@trpc/client/links/httpBatchLink';
+import { Provider } from 'react-redux';
 import superjson from 'superjson';
 import { Toaster } from 'react-hot-toast';
 // import dynamic from 'next/dynamic';
 
 import { URL } from '../constants';
 import { AppRouter } from '../server/route/app.router';
+import { store } from '../redux/store';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <Provider store={store}>
       <Toaster
         position="top-right"
         toastOptions={{
@@ -25,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <Component {...pageProps} />
-    </>
+    </Provider>
   );
 }
 
