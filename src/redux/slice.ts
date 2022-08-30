@@ -9,7 +9,7 @@ const initialState: SomeState = {
 };
 
 export const someSlice = createSlice({
-  name: '',
+  name: 'some',
   initialState,
   reducers: {
     setSome: (state, action: PayloadAction) => {},

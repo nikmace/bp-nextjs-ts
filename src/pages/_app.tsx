@@ -7,6 +7,7 @@ import superjson from 'superjson';
 import { Toaster } from 'react-hot-toast';
 // import dynamic from 'next/dynamic';
 
+import '../scss/app.scss';
 import { URL } from '../constants';
 import { AppRouter } from '../server/route/app.router';
 import { store } from '../redux/store';
