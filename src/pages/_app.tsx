@@ -5,7 +5,7 @@ import { httpBatchLink } from '@trpc/client/links/httpBatchLink';
 import { Provider } from 'react-redux';
 import superjson from 'superjson';
 import { Toaster } from 'react-hot-toast';
-// import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 
 import '../scss/app.scss';
 import { URL } from '../constants';
@@ -65,8 +65,7 @@ export default withTRPC<AppRouter>({
   },
   ssr: false,
 })(
-  // dynamic(() => Promise.resolve(MyApp), {
-  //   ssr: false,
-  // })
-  MyApp
+  dynamic(() => Promise.resolve(MyApp), {
+    ssr: false,
+  })
 );

@@ -76,6 +76,7 @@ module.exports = {
     'no-unsafe-finally': 'error',
     'no-restricted-globals': 'off',
     'no-unused-labels': 'error',
+    'no-unused-vars': 'off',
     'no-var': 'warn',
     'no-void': 'error',
     'prefer-const': 'warn',
